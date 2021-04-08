@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 
-public class StudentRegistrationFormTests {
+public class StudentRegistrationFormTests extends TestBase{
     private final String BASE_URL = "https://demoqa.com/automation-practice-form";
     private final String checkTheFormHeader = "Student Registration Form";
     private final String resultPageHeader = "Thanks for submitting the form";
@@ -94,7 +94,7 @@ public class StudentRegistrationFormTests {
                     text(filename),
                     text(address),
                     text(state),
-                    text(city));
+                    text(city + "error")); //добавляем ошибку
         });
     }
 }
