@@ -8,10 +8,12 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
+import static tests.TestData.*;
 
 public class StudentRegistrationFormTests {
     private final String BASE_URL = "https://demoqa.com/automation-practice-form";
-    String pageHeader = "Thanks for submitting the form";
+    private final String checkTheFormHeader = "Student Registration Form";
+    private final String resultPageHeader = "Thanks for submitting the form";
 
     @Test
     void successfulFillFormTest(){
@@ -21,9 +23,9 @@ public class StudentRegistrationFormTests {
                 email = faker.internet().emailAddress(),
                 gender = "Other",
                 phoneNumber = faker.number().digits(10),
-                dayOfBirth = String.valueOf(faker.number().numberBetween(1, 28)),
-                monthOfBirth = "March",
-                yearOfBirth = String.valueOf(faker.number().numberBetween(1900, 2010)),
+                dayOfBirth = randomDay(),
+                monthOfBirth = randomMonth(),
+                yearOfBirth = randomYear(),
                 subject1 = "Math",
                 subject2 = "Commerce",
                 hobby1 = "Sports",
@@ -36,7 +38,7 @@ public class StudentRegistrationFormTests {
 
         step("Open students registration form", () -> {
             open(BASE_URL);
-            $(".pactice-form-wrapper").shouldHave(text("Student Registration form"));
+            $(".practice-form-wrapper").shouldHave(text(checkTheFormHeader));
         });
         step("Fill students registration form", () -> {
                     step("Fill common data", () -> {
@@ -48,8 +50,8 @@ public class StudentRegistrationFormTests {
                     });
                     step("Set date", () -> {
                         $("#dateOfBirthInput").click();
-                        $(".react-datepicker__month-select").selectOptionByValue(monthOfBirth);
-                        $(".react-datepicker__year-select").selectOptionByValue(yearOfBirth);
+                        $(".react-datepicker__month-select").selectOption(monthOfBirth);
+                        $(".react-datepicker__year-select").selectOption(yearOfBirth);
                         $(".react-datepicker__month").$(byText(dayOfBirth)).click();
                     });
                     step("Set subjects", () -> {
@@ -63,7 +65,7 @@ public class StudentRegistrationFormTests {
                         $(byText(hobby3)).click();
                     });
                     step("Upload file", () ->
-                        $("#uploadPicture").uploadFromClasspath("img/" + filename));
+                        $("#uploadPicture").uploadFromClasspath(filename));
                     step("Set address", () -> {
                         $("#currentAddress").setValue(address).pressTab();
                         $("#state").scrollTo().click();
@@ -74,7 +76,7 @@ public class StudentRegistrationFormTests {
                     step("Submit the form", () -> $("#submit").pressEnter());
                 });
         step("Validate data", () -> {
-            $("#example-modal-sizes-title-lg").shouldHave(text(pageHeader));
+            $("#example-modal-sizes-title-lg").shouldHave(text(resultPageHeader));
             $(".table-responsive").shouldHave(
                     text(firstName),
                     text(lastName),
