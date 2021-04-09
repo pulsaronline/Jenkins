@@ -25,7 +25,7 @@ public class StudentRegistrationFormTests {
 
     @Test
     @DisplayName("Negative test")
-    @Disabled
+    //@Disabled
     public void testBroken() {
         TestBase.setup();
         formPage = new StudentRegistrationFormPage();
