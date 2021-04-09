@@ -9,7 +9,7 @@ import java.util.Locale;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class TestData extends StudentRegistrationFormTests{
+public class TestData {
     public static Faker faker = new Faker();
 
     FakeValuesService fakeValuesSevice = new FakeValuesService(
