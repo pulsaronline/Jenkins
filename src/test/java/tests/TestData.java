@@ -46,8 +46,7 @@ public class TestData {
     }
 
     public static String randomDay() {
-        int day = 0;
-        day = faker.number().numberBetween(1, 28);
+        int day = faker.number().numberBetween(1, 28);
         return String.valueOf(day);
     }
 
