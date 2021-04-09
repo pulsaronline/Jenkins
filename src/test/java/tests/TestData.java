@@ -150,22 +150,22 @@ public class TestData {
             case 1:
                 state = "NCR";
                 $("#state").click();
-                $(byText(state)).click();
+                $(byText(state)).scrollTo().click();
                 break;
             case 2:
                 state = "Uttar Pradesh";
                 $("#state").click();
-                $(byText(state)).click();
+                $(byText(state)).scrollTo().click();
                 break;
             case 3:
                 state = "Haryana";
                 $("#state").click();
-                $(byText(state)).click();
+                $(byText(state)).scrollTo().click();
                 break;
             case 4:
                 state = "Rajasthan";
                 $("#state").click();
-                $(byText(state)).click();
+                $(byText(state)).scrollTo().click();
                 break;
         }
         return state;
@@ -177,22 +177,22 @@ public class TestData {
             case "NCR":
                 city = "Delhi";
                 $("#city").click();
-                $(byText(city)).click();
+                $(byText(city)).scrollTo().click();
                 break;
             case "Uttar Pradesh":
                 city = "Agra";
                 $("#city").click();
-                $(byText(city)).click();
+                $(byText(city)).scrollTo().click();
                 break;
             case "Haryana":
                 city = "Karnal";
                 $("#city").click();
-                $(byText(city)).click();
+                $(byText(city)).scrollTo().click();
                 break;
             case "Rajasthan":
                 city = "Jaipur";
                 $("#city").click();
-                $(byText(city)).click();
+                $(byText(city)).scrollTo().click();
                 break;
         }
         return city;
