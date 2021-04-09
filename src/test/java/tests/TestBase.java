@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentHelper.*;
 
@@ -22,7 +23,9 @@ public class TestBase {
         capabilities.setCapability("browserVersion", "89.0");
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        open("https://demoqa.com/automation-practice-form");
     }
+
     @AfterEach
     void afterEach() {
         attachScreenshot("Last screenshot");
