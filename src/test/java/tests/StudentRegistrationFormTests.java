@@ -22,6 +22,8 @@ public class StudentRegistrationFormTests extends TestBase{
 
     @Test
     void successfulFillFormTest(){
+        FakeValuesService fakeValuesSevice = new FakeValuesService(
+                new Locale("ru"), new RandomService());
 
         String firstName = randomFirstName();
         String lastName = randomLastName();
@@ -94,7 +96,6 @@ public class StudentRegistrationFormTests extends TestBase{
     }
 
     @Test
-    @Disabled
     void negativeFillFormTest(){
         FakeValuesService fakeValuesSevice = new FakeValuesService(
                 new Locale("ru"), new RandomService());
