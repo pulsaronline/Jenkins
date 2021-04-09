@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
@@ -14,6 +15,7 @@ public class StudentRegistrationFormTests extends TestBase{
     //TestData testData;
 
    @Test
+   @DisplayName("Positive test")
    public void testOk() {
        TestBase.setup();
        formPage = new StudentRegistrationFormPage();
@@ -22,6 +24,7 @@ public class StudentRegistrationFormTests extends TestBase{
        });
     }
     @Test
+    @DisplayName("Negative test")
     public void testBroken() {
         TestBase.setup();
         formPage = new StudentRegistrationFormPage();
