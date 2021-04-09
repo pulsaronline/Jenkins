@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 
-public class StudentRegistrationFormPage extends TestData {
+public class StudentRegistrationFormPage {
     private final String BASE_URL = "https://demoqa.com/automation-practice-form";
     private final String checkTheFormHeader = "Student Registration Form";
     private final String resultPageHeader = "Thanks for submitting the form";

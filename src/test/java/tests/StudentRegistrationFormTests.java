@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static tests.TestBase.*;
 
-public class StudentRegistrationFormTests extends TestBase{
+public class StudentRegistrationFormTests {
     StudentRegistrationFormPage formPage;
     //TestData testData;
 
