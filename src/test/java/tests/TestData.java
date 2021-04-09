@@ -6,9 +6,6 @@ import com.github.javafaker.service.RandomService;
 
 import java.util.Locale;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-
 public class TestData {
     public static Faker faker = new Faker();
 

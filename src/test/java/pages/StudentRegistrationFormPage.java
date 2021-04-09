@@ -1,13 +1,5 @@
 package pages;
 
-import com.github.javafaker.service.FakeValuesService;
-import com.github.javafaker.service.RandomService;
-import org.junit.jupiter.api.Test;
-import tests.TestBase;
-import tests.TestData;
-
-import java.util.Locale;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -131,9 +123,7 @@ public class StudentRegistrationFormPage {
                 $("#subjectsContainer").click();
                 $("#subjectsInput").setValue(subject).pressEnter();
             });
-            step("Set hobbies", () -> {
-                $(byText(hobbie)).click();
-            });
+            step("Set hobbies", () -> $(byText(hobbie)).click());
             step("Upload file", () ->
                     $("#uploadPicture").uploadFromClasspath(filename));
             step("Set address", () -> {
