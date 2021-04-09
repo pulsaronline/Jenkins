@@ -67,7 +67,7 @@ public class StudentRegistrationFormTests extends TestBase{
 
             step("Upload file", () -> $("#uploadPicture").uploadFromClasspath(filename));
                     step("Set address", () -> {
-                        $("#currentAddress").setValue(address).pressTab();
+                        $("#currentAddress").setValue(address);
                         $("#state").scrollTo().click();
                         $(byText(state)).click();
                         $("#city").scrollTo().click();
@@ -143,7 +143,7 @@ public class StudentRegistrationFormTests extends TestBase{
             step("Upload file", () ->
                     $("#uploadPicture").uploadFromClasspath(filename));
             step("Set address", () -> {
-                $("#currentAddress").setValue(address).pressTab();
+                $("#currentAddress").setValue(address);
                 $("#state").scrollTo().click();
                 $(byText(state)).click();
                 $("#city").click();
