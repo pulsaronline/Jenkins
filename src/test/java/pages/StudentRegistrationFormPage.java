@@ -161,7 +161,7 @@ public class StudentRegistrationFormPage extends TestData {
                     text(filename),
                     text(address),
                     text(state),
-                    text(city + "error")); //добавляем ошибку
+                    text(city + " Error insertion")); //добавляем ошибку
         });
     }
 }

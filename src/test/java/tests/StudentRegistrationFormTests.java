@@ -19,17 +19,17 @@ public class StudentRegistrationFormTests extends TestBase{
    public void testOk() {
        TestBase.setup();
        formPage = new StudentRegistrationFormPage();
-       //step("Positive test", () -> {
+       step("Positive test", () -> {
        formPage.successfulFillFormPage();
-       //});
+       });
     }
     @Test
     @DisplayName("Negative test")
     public void testBroken() {
         TestBase.setup();
         formPage = new StudentRegistrationFormPage();
-        //step("Negative test", () -> {
+        step("Negative test", () -> {
         formPage.negativeFillFormPage();
-        //});
+        });
     }
 }
