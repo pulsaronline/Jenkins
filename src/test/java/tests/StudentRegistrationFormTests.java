@@ -1,7 +1,12 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import com.github.javafaker.service.FakeValuesService;
+import com.github.javafaker.service.RandomService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -17,24 +22,22 @@ public class StudentRegistrationFormTests extends TestBase{
 
     @Test
     void successfulFillFormTest(){
-        Faker faker = new Faker();
-        String firstName = faker.name().firstName(),
-                lastName = faker.name().lastName(),
-                email = faker.internet().emailAddress(),
-                gender = "Other",
-                phoneNumber = faker.number().digits(10),
-                dayOfBirth = randomDay(),
-                monthOfBirth = randomMonth(),
-                yearOfBirth = randomYear(),
-                subject1 = "Math",
-                subject2 = "Commerce",
-                hobby1 = "Sports",
-                hobby2 = "Reading",
-                hobby3 = "Music",
-                filename = "1.png",
-                address = faker.address().fullAddress(),
-                state = "Uttar Pradesh",
-                city = "Merrut";
+
+        String firstName = randomFirstName();
+        String lastName = randomLastName();
+        String gender = randomGender();
+        String email = randomEmail();
+        String phoneNumber = randomPhoneNumber();
+        String monthOfBirth = randomMonth();
+        String yearOfBirth = randomYear();
+        String dayOfBirth = randomDay();
+        String subject1 = randomSubject();
+        String subject2 = randomSubject();
+        String hobby = randomHobbie();
+        String filename = "1.png";
+        String address = randomAddress();
+        String state = "";
+        String city = "";
 
         step("Open students registration form", () -> {
             open(BASE_URL);
@@ -59,18 +62,15 @@ public class StudentRegistrationFormTests extends TestBase{
                         $("#subjectsInput").setValue(subject1).pressEnter();
                         $("#subjectsInput").setValue(subject2).pressEnter();
                     });
-                    step("Set hobbies", () -> {
-                        $(byText(hobby1)).click();
-                        $(byText(hobby2)).click();
-                        $(byText(hobby3)).click();
-                    });
-                    step("Upload file", () ->
-                        $("#uploadPicture").uploadFromClasspath(filename));
+                    step("Set hobbies", () -> $(byText(hobby)).click());
+                    //step("Set hobbies", () -> $(byText(hobby)).selectRadio(hobby));
+
+            step("Upload file", () -> $("#uploadPicture").uploadFromClasspath(filename));
                     step("Set address", () -> {
                         $("#currentAddress").setValue(address).pressTab();
                         $("#state").scrollTo().click();
                         $(byText(state)).click();
-                        $("#city").click();
+                        $("#city").scrollTo().click();
                         $(byText(city)).click();
                     });
                     step("Submit the form", () -> $("#submit").pressEnter());
@@ -88,9 +88,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     text(yearOfBirth),
                     text(subject1),
                     text(subject2),
-                    text(hobby1),
-                    text(hobby2),
-                    text(hobby3),
+                    text(hobby),
                     text(filename),
                     text(address),
                     text(state),
@@ -99,25 +97,26 @@ public class StudentRegistrationFormTests extends TestBase{
     }
 
     @Test
+    @Disabled
     void negativeFillFormTest(){
-        Faker faker = new Faker();
-        String firstName = faker.name().firstName(),
-                lastName = faker.name().lastName(),
-                email = faker.internet().emailAddress(),
-                gender = "Other",
-                phoneNumber = faker.number().digits(10),
-                dayOfBirth = randomDay(),
-                monthOfBirth = randomMonth(),
-                yearOfBirth = randomYear(),
-                subject1 = "Math",
-                subject2 = "Commerce",
-                hobby1 = "Sports",
-                hobby2 = "Reading",
-                hobby3 = "Music",
-                filename = "1.png",
-                address = faker.address().fullAddress(),
-                state = "Uttar Pradesh",
-                city = "Merrut";
+        FakeValuesService fakeValuesSevice = new FakeValuesService(
+                new Locale("ru"), new RandomService());
+
+        String firstName = randomFirstName();
+        String lastName = randomLastName();
+        String gender = randomGender();
+        String email = randomEmail();
+        String phoneNumber = randomPhoneNumber();
+        String monthOfBirth = randomMonth();
+        String yearOfBirth = randomYear();
+        String dayOfBirth = randomDay();
+        String subject1 = randomSubject();
+        String subject2 = randomSubject();
+        String hobby = randomHobbie();
+        String filename = "1.png";
+        String address = randomAddress();
+        String state = "";
+        String city = "";
 
         step("Open students registration form", () -> {
             open(BASE_URL);
@@ -143,9 +142,7 @@ public class StudentRegistrationFormTests extends TestBase{
                 $("#subjectsInput").setValue(subject2).pressEnter();
             });
             step("Set hobbies", () -> {
-                $(byText(hobby1)).click();
-                $(byText(hobby2)).click();
-                $(byText(hobby3)).click();
+                $(byText(hobby)).click();
             });
             step("Upload file", () ->
                     $("#uploadPicture").uploadFromClasspath(filename));
@@ -171,9 +168,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     text(yearOfBirth),
                     text(subject1),
                     text(subject2),
-                    text(hobby1),
-                    text(hobby2),
-                    text(hobby3),
+                    text(hobby),
                     text(filename),
                     text(address),
                     text(state),
