@@ -29,12 +29,12 @@ public class AttachmentHelper {
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
-        return "<html><body><video with='100%' heigh='100%' controls autoplay><source src='"
-                + "https://@selenoid.autotests.cloud/video/" + getsessionId() + "mp.4"
-                + "'type='video/mp4'</video></body></html>";
+        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+                + "https://@selenoid.autotests.cloud/video/" + getSessionId() + "mp.4"
+                + "' type='video/mp4'></video></body></html>";
     }
 
-    public static String getsessionId(){
+    public static String getSessionId(){
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 
