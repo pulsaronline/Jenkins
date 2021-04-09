@@ -21,6 +21,7 @@ public class StudentRegistrationFormPage extends TestData {
     private final String resultPageHeader = "Thanks for submitting the form";
 
     public void successfulFillFormPage(){
+        open("https://demoqa.com/automation-practice-form");
 
         String firstName = randomFirstName();
         String lastName = randomLastName();
@@ -93,6 +94,7 @@ public class StudentRegistrationFormPage extends TestData {
     }
 
     public void negativeFillFormPage(){
+        open("https://demoqa.com/automation-practice-form");
 
         String firstName = randomFirstName();
         String lastName = randomLastName();

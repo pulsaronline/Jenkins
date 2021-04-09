@@ -12,7 +12,6 @@ public class StudentRegistrationFormTests extends TestBase{
 
    @Test
    public void testsQueue() {
-       open("https://demoqa.com/automation-practice-form");
        TestBase.setup();
 
        formPage = new StudentRegistrationFormPage();
