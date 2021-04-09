@@ -29,7 +29,7 @@ public class TestData {
 
     public static String randomHobbie() {
         int hobbieNumber = faker.number().numberBetween(1, 3);
-        String hobbie = null;
+        String hobbie = "";
         switch (hobbieNumber) {
             case 1:
                 hobbie = "Sports";

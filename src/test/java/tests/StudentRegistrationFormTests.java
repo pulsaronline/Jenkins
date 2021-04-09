@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -63,15 +62,15 @@ public class StudentRegistrationFormTests extends TestBase{
                         $("#subjectsInput").setValue(subject1).pressEnter();
                         $("#subjectsInput").setValue(subject2).pressEnter();
                     });
-                    step("Set hobbies", () -> $(withText(hobbie)).click());
+                    step("Set hobbies", () -> $(byText(hobbie)).click());
                     //step("Set hobbies", () -> $(byText(hobby)).selectRadio(hobby));
 
             step("Upload file", () -> $("#uploadPicture").uploadFromClasspath(filename));
                     step("Set address", () -> {
                         $("#currentAddress").setValue(address).pressTab();
-                        $("#state").click();
+                        $("#state").scrollTo().click();
                         $(byText(state)).click();
-                        $("#city").click();
+                        $("#city").scrollTo().click();
                         $(byText(city)).click();
                     });
                     step("Submit the form", () -> $("#submit").pressEnter());
