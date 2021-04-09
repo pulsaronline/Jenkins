@@ -12,7 +12,7 @@ import static helpers.AttachmentHelper.*;
 
 public class TestBase {
     @BeforeAll
-    static public void setup() {
+    static void beforeAll() {
         Configuration.browserSize = "1024x768";
         addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -22,6 +22,8 @@ public class TestBase {
         //capabilities.setCapability("browserVersion", "89.0");
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = System.getProperty("remote_driver");
+        Configuration.browser = System.getProperty("browser", "chrome");
+
     }
 
     @AfterEach
