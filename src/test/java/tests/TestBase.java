@@ -23,7 +23,6 @@ public class TestBase {
         capabilities.setCapability("browserVersion", "89.0");
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        open("https://demoqa.com/automation-practice-form");
     }
 
     @AfterEach

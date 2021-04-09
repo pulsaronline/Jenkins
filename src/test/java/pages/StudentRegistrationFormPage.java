@@ -4,6 +4,7 @@ import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
+import tests.TestData;
 
 import java.util.Locale;
 
@@ -14,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 
-public class StudentRegistrationFormPage extends TestBase {
+public class StudentRegistrationFormPage extends TestData {
     private final String BASE_URL = "https://demoqa.com/automation-practice-form";
     private final String checkTheFormHeader = "Student Registration Form";
     private final String resultPageHeader = "Thanks for submitting the form";
@@ -92,8 +93,6 @@ public class StudentRegistrationFormPage extends TestBase {
     }
 
     public void negativeFillFormPage(){
-        FakeValuesService fakeValuesSevice = new FakeValuesService(
-                new Locale("ru"), new RandomService());
 
         String firstName = randomFirstName();
         String lastName = randomLastName();

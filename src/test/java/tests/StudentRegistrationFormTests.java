@@ -4,15 +4,17 @@ import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static tests.TestBase.*;
 
-public class StudentRegistrationFormTests {
+public class StudentRegistrationFormTests extends TestBase{
     StudentRegistrationFormPage formPage;
-    TestData testData;
+    //TestData testData;
 
    @Test
    public void testsQueue() {
+       open("https://demoqa.com/automation-practice-form");
        TestBase.setup();
-       testData = new TestData();
+
        formPage = new StudentRegistrationFormPage();
 
        formPage.successfulFillFormPage();

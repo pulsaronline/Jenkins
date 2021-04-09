@@ -9,7 +9,7 @@ import java.util.Locale;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class TestData {
+public class TestData extends StudentRegistrationFormTests{
     public static Faker faker = new Faker();
 
     FakeValuesService fakeValuesSevice = new FakeValuesService(
@@ -145,8 +145,9 @@ public class TestData {
 
     public static String randomState() {
         int subjectsNumber = faker.number().numberBetween(1, 4);
-        String state = null;
-        switch (subjectsNumber) {
+        String state = "NCR";
+        //String state = null;
+        /*switch (subjectsNumber) {
             case 1:
                 state = "NCR";
                 $("#state").click();
@@ -167,13 +168,14 @@ public class TestData {
                 $("#state").click();
                 $(byText(state)).scrollTo().click();
                 break;
-        }
+        }*/
         return state;
     }
 
     public static String randomCity(String state) {
-        String city = null;
-        switch (state) {
+        String city = "Delhi";
+        //String city = null;
+        /*switch (state) {
             case "NCR":
                 city = "Delhi";
                 $("#city").click();
@@ -194,7 +196,7 @@ public class TestData {
                 $("#city").click();
                 $(byText(city)).scrollTo().click();
                 break;
-        }
+        }*/
         return city;
     }
 }
