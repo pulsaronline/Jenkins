@@ -145,7 +145,6 @@ public class TestData extends StudentRegistrationFormTests{
 
     public static String randomState() {
         int subjectsNumber = faker.number().numberBetween(1, 4);
-        //String state = "NCR";
         String state = null;
         switch (subjectsNumber) {
             case 1:
@@ -165,7 +164,6 @@ public class TestData extends StudentRegistrationFormTests{
     }
 
     public static String randomCity(String state) {
-        //String city = "Delhi";
         String city = null;
         switch (state) {
             case "NCR":
