@@ -11,12 +11,17 @@ public class StudentRegistrationFormTests extends TestBase{
     //TestData testData;
 
    @Test
-   public void testsQueue() {
+   public void testsOk() {
        TestBase.setup();
-
        formPage = new StudentRegistrationFormPage();
 
        formPage.successfulFillFormPage();
-       formPage.negativeFillFormPage();
+    }
+    @Test
+    public void testsBroken() {
+        TestBase.setup();
+        formPage = new StudentRegistrationFormPage();
+
+        formPage.negativeFillFormPage();
     }
 }
