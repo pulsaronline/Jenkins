@@ -37,8 +37,8 @@ public class StudentRegistrationFormTests extends TestBase{
         String hobbie = randomHobbie();
         String filename = "1.png";
         String address = randomAddress();
-        String state = "";
-        String city = "";
+        String state = null;
+        String city = null;
 
         step("Open students registration form", () -> {
             open(BASE_URL);
@@ -112,8 +112,8 @@ public class StudentRegistrationFormTests extends TestBase{
         String hobbie = randomHobbie();
         String filename = "1.png";
         String address = randomAddress();
-        String state = "";
-        String city = "";
+        String state = null;
+        String city = null;
 
         step("Open students registration form", () -> {
             open(BASE_URL);
