@@ -10,6 +10,7 @@ import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -33,7 +34,7 @@ public class StudentRegistrationFormTests extends TestBase{
         String dayOfBirth = randomDay();
         String subject1 = randomSubject();
         String subject2 = randomSubject();
-        String hobby = randomHobbie();
+        String hobbie = randomHobbie();
         String filename = "1.png";
         String address = randomAddress();
         String state = "";
@@ -62,7 +63,7 @@ public class StudentRegistrationFormTests extends TestBase{
                         $("#subjectsInput").setValue(subject1).pressEnter();
                         $("#subjectsInput").setValue(subject2).pressEnter();
                     });
-                    step("Set hobbies", () -> $(byText(hobby)).click());
+                    step("Set hobbies", () -> $(withText(hobbie)).click());
                     //step("Set hobbies", () -> $(byText(hobby)).selectRadio(hobby));
 
             step("Upload file", () -> $("#uploadPicture").uploadFromClasspath(filename));
@@ -88,7 +89,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     text(yearOfBirth),
                     text(subject1),
                     text(subject2),
-                    text(hobby),
+                    text(hobbie),
                     text(filename),
                     text(address),
                     text(state),
@@ -112,7 +113,7 @@ public class StudentRegistrationFormTests extends TestBase{
         String dayOfBirth = randomDay();
         String subject1 = randomSubject();
         String subject2 = randomSubject();
-        String hobby = randomHobbie();
+        String hobbie = randomHobbie();
         String filename = "1.png";
         String address = randomAddress();
         String state = "";
@@ -142,7 +143,7 @@ public class StudentRegistrationFormTests extends TestBase{
                 $("#subjectsInput").setValue(subject2).pressEnter();
             });
             step("Set hobbies", () -> {
-                $(byText(hobby)).click();
+                $(byText(hobbie)).click();
             });
             step("Upload file", () ->
                     $("#uploadPicture").uploadFromClasspath(filename));
@@ -168,7 +169,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     text(yearOfBirth),
                     text(subject1),
                     text(subject2),
-                    text(hobby),
+                    text(hobbie),
                     text(filename),
                     text(address),
                     text(state),
