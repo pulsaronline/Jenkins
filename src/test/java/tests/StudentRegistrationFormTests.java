@@ -69,9 +69,9 @@ public class StudentRegistrationFormTests extends TestBase{
             step("Upload file", () -> $("#uploadPicture").uploadFromClasspath(filename));
                     step("Set address", () -> {
                         $("#currentAddress").setValue(address).pressTab();
-                        $("#state").scrollTo().click();
+                        $("#state").click();
                         $(byText(state)).click();
-                        $("#city").scrollTo().click();
+                        $("#city").click();
                         $(byText(city)).click();
                     });
                     step("Submit the form", () -> $("#submit").pressEnter());
