@@ -21,7 +21,7 @@ public class TestBase {
         //capabilities.setCapability("browserName", "chrome");
         //capabilities.setCapability("browserVersion", "89.0");
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = System.getProperty("remote_driver");
     }
 
     @AfterEach
@@ -29,6 +29,7 @@ public class TestBase {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());
+        if (System.getProperty("video_storage") != null)
         attachVideo();
         closeWebDriver();
     }
