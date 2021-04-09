@@ -68,10 +68,10 @@ public class StudentRegistrationFormTests extends TestBase{
             step("Upload file", () -> $("#uploadPicture").uploadFromClasspath(filename));
                     step("Set address", () -> {
                         $("#currentAddress").setValue(address);
-                        $("#state").scrollTo().click();
-                        $(byText(state)).click();
-                        $("#city").scrollTo().click();
-                        $(byText(city)).click();
+                        $("#state").click();
+                        $(byText(state)).scrollTo().click();
+                        $("#city").click();
+                        $(byText(city)).scrollTo().click();
                     });
                     step("Submit the form", () -> $("#submit").pressEnter());
                 });
@@ -144,10 +144,10 @@ public class StudentRegistrationFormTests extends TestBase{
                     $("#uploadPicture").uploadFromClasspath(filename));
             step("Set address", () -> {
                 $("#currentAddress").setValue(address);
-                $("#state").scrollTo().click();
-                $(byText(state)).click();
+                $("#state").click();
+                $(byText(state)).scrollTo().click();
                 $("#city").click();
-                $(byText(city)).click();
+                $(byText(city)).scrollTo().click();
             });
             step("Submit the form", () -> $("#submit").pressEnter());
         });
