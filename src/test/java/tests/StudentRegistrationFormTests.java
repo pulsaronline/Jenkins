@@ -31,8 +31,7 @@ public class StudentRegistrationFormTests extends TestBase{
         String monthOfBirth = randomMonth();
         String yearOfBirth = randomYear();
         String dayOfBirth = randomDay();
-        String subject1 = randomSubject();
-        String subject2 = randomSubject();
+        String subject = randomSubject();
         String hobbie = randomHobbie();
         String filename = "1.png";
         String address = randomAddress();
@@ -59,8 +58,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     });
                     step("Set subjects", () -> {
                         $("#subjectsContainer").click();
-                        $("#subjectsInput").setValue(subject1).pressEnter();
-                        $("#subjectsInput").setValue(subject2).pressEnter();
+                        $("#subjectsInput").setValue(subject).pressEnter();
                     });
                     step("Set hobbies", () -> $(byText(hobbie)).click());
                     //step("Set hobbies", () -> $(byText(hobby)).selectRadio(hobby));
@@ -86,8 +84,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     text(dayOfBirth),
                     text(monthOfBirth),
                     text(yearOfBirth),
-                    text(subject1),
-                    text(subject2),
+                    text(subject),
                     text(hobbie),
                     text(filename),
                     text(address),
@@ -110,8 +107,7 @@ public class StudentRegistrationFormTests extends TestBase{
         String monthOfBirth = randomMonth();
         String yearOfBirth = randomYear();
         String dayOfBirth = randomDay();
-        String subject1 = randomSubject();
-        String subject2 = randomSubject();
+        String subject = randomSubject();
         String hobbie = randomHobbie();
         String filename = "1.png";
         String address = randomAddress();
@@ -138,8 +134,7 @@ public class StudentRegistrationFormTests extends TestBase{
             });
             step("Set subjects", () -> {
                 $("#subjectsContainer").click();
-                $("#subjectsInput").setValue(subject1).pressEnter();
-                $("#subjectsInput").setValue(subject2).pressEnter();
+                $("#subjectsInput").setValue(subject).pressEnter();
             });
             step("Set hobbies", () -> {
                 $(byText(hobbie)).click();
@@ -166,8 +161,7 @@ public class StudentRegistrationFormTests extends TestBase{
                     text(dayOfBirth),
                     text(monthOfBirth),
                     text(yearOfBirth),
-                    text(subject1),
-                    text(subject2),
+                    text(subject),
                     text(hobbie),
                     text(filename),
                     text(address),
