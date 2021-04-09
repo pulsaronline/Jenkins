@@ -15,7 +15,7 @@ public class StudentRegistrationFormTests extends TestBase{
     //TestData testData;
 
    @Test
-   @DisplayName("Positive test")
+   //@DisplayName("Positive test")
    public void testOk() {
        TestBase.setup();
        formPage = new StudentRegistrationFormPage();
@@ -24,7 +24,7 @@ public class StudentRegistrationFormTests extends TestBase{
        });
     }
     @Test
-    @DisplayName("Negative test")
+    //@DisplayName("Negative test")
     public void testBroken() {
         TestBase.setup();
         formPage = new StudentRegistrationFormPage();
