@@ -1,5 +1,7 @@
 package pages;
 
+import tests.TestBase;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -150,6 +152,7 @@ public class StudentRegistrationFormPage {
                 $(".table-responsive").shouldHave(text(address));
                 $(".table-responsive").shouldHave(text(state));
                 $(".table-responsive").shouldHave(text(city + " Error insertion")); //добавляем ошибку
+            TestBase.afterEach();
         });
     }
 }
