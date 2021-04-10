@@ -25,6 +25,6 @@ public class StudentRegistrationFormTests {
         TestBase.beforeAll();
         formPage = new StudentRegistrationFormPage();
         formPage.fillThePage("ERROR");
-//        TestBase.afterEach();
+        TestBase.afterEach();
     }
 }
