@@ -12,11 +12,28 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentHelper.*;
 
 public class TestBase {
-
     @BeforeAll
     public static void beforeAll() {
         Configuration.browserSize = "1024x768";
         addListener("AllureSelenide", new AllureSelenide());
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        //capabilities.setCapability("browserName", "chrome");
+        //capabilities.setCapability("browserVersion", "89.0");
+        Configuration.browserCapabilities = capabilities;
+        //Configuration.remote = System.getProperty("remote_driver");
+        //Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
+    @AfterEach
+    public static void afterEach() {
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachAsText("Browser console error logs", getConsoleLogs());
+        //if (System.getProperty("video_storage") != null)
+        attachVideo();
+        closeWebDriver();
+    }
 }

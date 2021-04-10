@@ -14,7 +14,7 @@ public class StudentRegistrationFormPage {
     private final String checkTheFormHeader = "Student Registration Form";
     private final String resultPageHeader = "Thanks for submitting the form";
 
-    public void successfulFillFormPage(){
+    public void fillThePage(String error){
 
         String firstName = randomFirstName();
         String lastName = randomLastName();
@@ -81,11 +81,11 @@ public class StudentRegistrationFormPage {
             $(".table-responsive").shouldHave(text(filename));
             $(".table-responsive").shouldHave(text(address));
             $(".table-responsive").shouldHave(text(state));
-            $(".table-responsive").shouldHave(text(city));
+            $(".table-responsive").shouldHave((text(city + error)));
         });
     }
 
-    public void negativeFillFormPage(){
+/*    public void negativeFillFormPage(){
 
         String firstName = randomFirstName();
         String lastName = randomLastName();
@@ -153,5 +153,5 @@ public class StudentRegistrationFormPage {
                 $(".table-responsive").shouldHave(text(state));
                 $(".table-responsive").shouldHave(text(city + " Error insertion")); //добавляем ошибку
         });
-    }
+    }*/
 }
