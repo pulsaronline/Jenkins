@@ -14,7 +14,7 @@ public class StudentRegistrationFormTests {
     public void okTest() {
        TestBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
-       formPage.fillThePage("");
+       formPage.fillThePage("1");
        TestBase.afterEach();
    }
 
