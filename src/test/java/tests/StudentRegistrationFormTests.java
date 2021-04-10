@@ -35,7 +35,7 @@ public class StudentRegistrationFormTests {
     }*/
 
     @AfterEach
-    void afterEach() {
+    public void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());
