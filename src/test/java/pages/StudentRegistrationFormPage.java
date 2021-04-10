@@ -66,21 +66,20 @@ public class StudentRegistrationFormPage {
                 });
         step("Validate data", () -> {
             $("#example-modal-sizes-title-lg").shouldHave(text(resultPageHeader));
-            $(".table-responsive").shouldHave(
-                    text(firstName),
-                    text(lastName),
-                    text(email),
-                    text(gender),
-                    text(phoneNumber),
-                    text(dayOfBirth),
-                    text(monthOfBirth),
-                    text(yearOfBirth),
-                    text(subject),
-                    text(hobbie),
-                    text(filename),
-                    text(address),
-                    text(state),
-                    text(city));
+            $(".table-responsive").shouldHave(text(firstName));
+            $(".table-responsive").shouldHave(text(lastName));
+            $(".table-responsive").shouldHave(text(email));
+            $(".table-responsive").shouldHave(text(gender));
+            $(".table-responsive").shouldHave(text(phoneNumber));
+            $(".table-responsive").shouldHave(text(dayOfBirth));
+            $(".table-responsive").shouldHave(text(monthOfBirth));
+            $(".table-responsive").shouldHave(text(yearOfBirth));
+            $(".table-responsive").shouldHave(text(subject));
+            $(".table-responsive").shouldHave(text(hobbie));
+            $(".table-responsive").shouldHave(text(filename));
+            $(".table-responsive").shouldHave(text(address));
+            $(".table-responsive").shouldHave(text(state));
+            $(".table-responsive").shouldHave(text(city));
         });
     }
 
@@ -136,22 +135,21 @@ public class StudentRegistrationFormPage {
             step("Submit the form", () -> $("#submit").pressEnter());
         });
         step("Validate data", () -> {
-            $("#example-modal-sizes-title-lg").shouldHave(text(resultPageHeader));
-            $(".table-responsive").shouldHave(
-                    text(firstName),
-                    text(lastName),
-                    text(email),
-                    text(gender),
-                    text(phoneNumber),
-                    text(dayOfBirth),
-                    text(monthOfBirth),
-                    text(yearOfBirth),
-                    text(subject),
-                    text(hobbie),
-                    text(filename),
-                    text(address),
-                    text(state),
-                    text(city + " Error insertion")); //добавляем ошибку
+                $("#example-modal-sizes-title-lg").shouldHave(text(resultPageHeader));
+                $(".table-responsive").shouldHave(text(firstName));
+                $(".table-responsive").shouldHave(text(lastName));
+                $(".table-responsive").shouldHave(text(email));
+                $(".table-responsive").shouldHave(text(gender));
+                $(".table-responsive").shouldHave(text(phoneNumber));
+                $(".table-responsive").shouldHave(text(dayOfBirth));
+                $(".table-responsive").shouldHave(text(monthOfBirth));
+                $(".table-responsive").shouldHave(text(yearOfBirth));
+                $(".table-responsive").shouldHave(text(subject));
+                $(".table-responsive").shouldHave(text(hobbie));
+                $(".table-responsive").shouldHave(text(filename));
+                $(".table-responsive").shouldHave(text(address));
+                $(".table-responsive").shouldHave(text(state));
+                $(".table-responsive").shouldHave(text(city + " Error insertion")); //добавляем ошибку
         });
     }
 }
