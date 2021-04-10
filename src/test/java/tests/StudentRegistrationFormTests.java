@@ -11,7 +11,7 @@ public class StudentRegistrationFormTests {
    @Test
    @DisplayName("Positive test")
    public void testOk() {
-       TestBase.beforeAll();
+       //TestBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
        formPage.successfulFillFormPage();
     }
@@ -20,7 +20,7 @@ public class StudentRegistrationFormTests {
     @DisplayName("Negative test")
     //@Disabled
     public void testBroken() {
-        TestBase.beforeAll();
+        //TestBase.beforeAll();
         formPage = new StudentRegistrationFormPage();
         formPage.negativeFillFormPage();
     }
