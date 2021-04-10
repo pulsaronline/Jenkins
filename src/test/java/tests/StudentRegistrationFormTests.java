@@ -49,14 +49,14 @@ public class StudentRegistrationFormTests {
 
     @Test
     @DisplayName("Positive test")
-    public void okTest() {
+    void okTest() {
        formPage = new StudentRegistrationFormPage();
        formPage.fillThePage("");
           }
 
     @Test
     @DisplayName("Negative test")
-    public void brokenTest() {
+    void brokenTest() {
         formPage = new StudentRegistrationFormPage();
         formPage.fillThePage("ERROR");
     }
