@@ -22,7 +22,7 @@ public class StudentRegistrationFormTests {
     @DisplayName("Negative test")
     //@Disabled
     public void testBroken() {
-//        TestBase.beforeAll();
+        TestBase.beforeAll();
         formPage = new StudentRegistrationFormPage();
         formPage.fillThePage("ERROR");
 //        TestBase.afterEach();
