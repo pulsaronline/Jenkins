@@ -28,12 +28,21 @@ public class StudentRegistrationFormTests {
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
+    @BeforeEach
+    void beforeEach(){
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = System.getProperty("remote_driver");
+    }
+
     @AfterEach
     void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());
-        //if (System.getProperty("video_storage") != null)
+        if (System.getProperty("video_storage") != null)
         attachVideo();
         closeWebDriver();
     }
