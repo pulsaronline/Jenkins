@@ -5,7 +5,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.StudentRegistrationFormPage;
-import static tests.TestBase.*;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
@@ -13,9 +12,8 @@ import static helpers.AttachmentHelper.*;
 
 public class StudentRegistrationFormTests {
     StudentRegistrationFormPage formPage;
-    TestBase testBase;
 
-/*    @BeforeAll
+    @BeforeAll
     public static void beforeAll() {
         Configuration.browserSize = "1024x768";
         addListener("AllureSelenide", new AllureSelenide());
@@ -39,24 +37,18 @@ public class StudentRegistrationFormTests {
         attachVideo();
         closeWebDriver();
     }
-*/
+
     @Test
     @DisplayName("Positive test")
-//  @Disabled
     public void okTest() {
-       testBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
        formPage.fillThePage("");
-       testBase.afterEach();
-   }
+          }
 
     @Test
     @DisplayName("Negative test")
-//  @Disabled
     public void brokenTest() {
-        testBase.beforeAll();
         formPage = new StudentRegistrationFormPage();
         formPage.fillThePage("ERROR");
-        testBase.afterEach();
     }
 }
