@@ -13,7 +13,7 @@ import static helpers.AttachmentHelper.*;
 public class StudentRegistrationFormTests {
     StudentRegistrationFormPage formPage;
 
-    @BeforeAll
+/*    @BeforeAll
     public static void beforeAll() {
         Configuration.browserSize = "1024x768";
         addListener("AllureSelenide", new AllureSelenide());
@@ -37,7 +37,7 @@ public class StudentRegistrationFormTests {
         attachVideo();
         closeWebDriver();
     }
-
+*/
     @Test
     @DisplayName("Positive test")
 //  @Disabled
