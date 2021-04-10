@@ -1,16 +1,17 @@
 package tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
 public class StudentRegistrationFormTests {
     StudentRegistrationFormPage formPage;
-    //TestData testData;
 
-   @Test
-   @DisplayName("Positive test")
-   public void testOk() {
+    @Test
+    @DisplayName("Positive test")
+    @Disabled
+    public void testOk() {
        TestBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
        formPage.fillThePage("");
