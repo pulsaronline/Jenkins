@@ -21,8 +21,13 @@ public class StudentRegistrationFormTests {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("remote");
+        //Configuration.remote = System.getProperty("remote");
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        //gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
+        String remoteWebDriver = System.getProperty("remote.web.driver");
+        if(remoteWebDriver !="")
+            Configuration.remote = remoteWebDriver;
+
     }
 
     @AfterEach
@@ -30,7 +35,10 @@ public class StudentRegistrationFormTests {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());
-        attachVideo();
+//gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
+// -Dvideo.storage="https://selenoid.autotests.cloud/video/"
+        if(System.getProperty("video.storage") !="")
+            attachVideo();
         closeWebDriver();
     }
 
