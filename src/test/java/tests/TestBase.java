@@ -12,7 +12,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentHelper.*;
 
 public class TestBase {
-    @BeforeAll
+    /*@BeforeAll
     public static void beforeAll() {
         Configuration.browserSize = "1024x768";
         addListener("AllureSelenide", new AllureSelenide());
@@ -35,5 +35,5 @@ public class TestBase {
         //if (System.getProperty("video_storage") != null)
         attachVideo();
         closeWebDriver();
-    }
+    }*/
 }
