@@ -21,8 +21,8 @@ public class StudentRegistrationFormTests {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        //Configuration.remote = System.getProperty("remote");
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = System.getProperty("remote");
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
    /* @BeforeEach
