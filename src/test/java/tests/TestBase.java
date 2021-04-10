@@ -34,6 +34,6 @@ public class TestBase {
         attachAsText("Browser console error logs", getConsoleLogs());
         //if (System.getProperty("video_storage") != null)
         attachVideo();
-        //closeWebDriver();
+        closeWebDriver();
     }
 }
