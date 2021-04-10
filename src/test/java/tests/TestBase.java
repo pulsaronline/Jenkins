@@ -28,7 +28,7 @@ public class TestBase {
     }
 
     @AfterEach
-    void afterEach() {
+    static void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());

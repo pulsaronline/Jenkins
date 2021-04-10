@@ -14,7 +14,9 @@ public class StudentRegistrationFormTests {
        TestBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
        formPage.successfulFillFormPage();
-    }
+       TestBase.afterEach();
+
+   }
 
     @Test
     @DisplayName("Negative test")
@@ -23,5 +25,6 @@ public class StudentRegistrationFormTests {
         TestBase.beforeAll();
         formPage = new StudentRegistrationFormPage();
         formPage.negativeFillFormPage();
+        TestBase.afterEach();
     }
 }
