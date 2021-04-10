@@ -28,14 +28,14 @@ public class StudentRegistrationFormTests {
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
-    /*@BeforeEach
+    @BeforeEach
     void beforeEach(){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = System.getProperty("remote_driver");
-    }*/
+    }
 
     @AfterEach
     void afterEach() {
