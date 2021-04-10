@@ -5,6 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.StudentRegistrationFormPage;
+import static tests.TestBase.*;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
@@ -12,6 +13,7 @@ import static helpers.AttachmentHelper.*;
 
 public class StudentRegistrationFormTests {
     StudentRegistrationFormPage formPage;
+    TestBase testBase;
 
 /*    @BeforeAll
     public static void beforeAll() {
@@ -42,19 +44,19 @@ public class StudentRegistrationFormTests {
     @DisplayName("Positive test")
 //  @Disabled
     public void okTest() {
-//       TestBase.beforeAll();
+       testBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
        formPage.fillThePage("");
-//       TestBase.afterEach();
+       testBase.afterEach();
    }
 
     @Test
     @DisplayName("Negative test")
 //  @Disabled
     public void brokenTest() {
-        //TestBase.beforeAll();
+        testBase.beforeAll();
         formPage = new StudentRegistrationFormPage();
         formPage.fillThePage("ERROR");
-//        TestBase.afterEach();
+        testBase.afterEach();
     }
 }
