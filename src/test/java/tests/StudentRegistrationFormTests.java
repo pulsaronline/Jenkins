@@ -10,7 +10,7 @@ public class StudentRegistrationFormTests {
 
     @Test
     @DisplayName("Positive test")
-  @Disabled
+//  @Disabled
     public void okTest() {
        TestBase.beforeAll();
        formPage = new StudentRegistrationFormPage();
