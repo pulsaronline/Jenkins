@@ -15,7 +15,6 @@ public class StudentRegistrationFormTests {
        formPage = new StudentRegistrationFormPage();
        formPage.successfulFillFormPage();
        TestBase.afterEach();
-
    }
 
     @Test
