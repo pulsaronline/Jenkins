@@ -13,7 +13,7 @@ import static helpers.AttachmentHelper.*;
 
 public class TestBase {
     @BeforeAll
-    static void beforeAll() {
+    public static void beforeAll() {
         Configuration.browserSize = "1024x768";
         addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -28,7 +28,7 @@ public class TestBase {
     }
 
     @AfterEach
-    static void afterEach() {
+    public static void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());
