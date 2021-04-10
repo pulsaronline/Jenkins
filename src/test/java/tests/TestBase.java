@@ -22,17 +22,9 @@ public class TestBase {
         //capabilities.setCapability("browserName", "chrome");
         //capabilities.setCapability("browserVersion", "89.0");
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("remote_driver");
-        Configuration.browser = System.getProperty("browser", "chrome");
-
-    }
-    @BeforeEach
-    void beforeEach(){
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-
-        Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("remote_driver");
-        Configuration.browser = System.getProperty("browser", "chrome");
+        //Configuration.remote = System.getProperty("remote_driver");
+        //Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @AfterEach
