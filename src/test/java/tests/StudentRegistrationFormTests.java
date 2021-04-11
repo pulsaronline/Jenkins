@@ -2,7 +2,10 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.StudentRegistrationFormPage;
 
@@ -21,13 +24,8 @@ public class StudentRegistrationFormTests {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        //Configuration.remote = System.getProperty("remote");
+        Configuration.remote = System.getProperty("remote");
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        //gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
-        String remoteWebDriver = System.getProperty("remote.web.driver");
-        if(remoteWebDriver !="")
-            Configuration.remote = remoteWebDriver;
-
     }
 
     @AfterEach
@@ -35,19 +33,17 @@ public class StudentRegistrationFormTests {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console error logs", getConsoleLogs());
-//gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
-// -Dvideo.storage="https://selenoid.autotests.cloud/video/"
-        if(System.getProperty("video.storage") !="")
-            attachVideo();
+//        if (System.getProperty("video_storage") != null)
+        attachVideo();
         closeWebDriver();
     }
 
     @Test
     @DisplayName("Positive test")
     void okTest() {
-       formPage = new StudentRegistrationFormPage();
-       formPage.fillThePage("");
-          }
+        formPage = new StudentRegistrationFormPage();
+        formPage.fillThePage("");
+    }
 
     @Test
     @DisplayName("Negative test")
